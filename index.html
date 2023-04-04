@@ -3,11 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
   <title>Mo's VR Aframe Demo</title>
-  <script type="importmap-shim" src="/import-map.json"></script>
-  <script type="module" src="src/index.ts"></script>
+  <script
+    type=module
+    src="//unpkg.com/@mothepro/es-module-shims@0.0.0/dist/es-module-shims.min.js"
+  ></script>
+  <script
+    type="importmap-shim"
+    src="/import-map.json"
+  ></script>
+  <script
+    type="module"
+    src="src/index.ts"
+  ></script>
 </head>
 
 <body>
@@ -19,16 +35,18 @@
       ></a-asset-items>
     </a-assets>
     <a-entity
-      position="-1 0.5 -3" gltf-model="#robo"></a-entity>
-      <a-entity
-        id="leftHand"
-        hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
-      ></a-entity>
-      <a-entity
-        id="rightHand"
-        hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
-      ></a-entity>
-      <!-- </a-scene>
+      position="-1 0.5 -3"
+      gltf-model="#robo"
+    ></a-entity>
+    <a-entity
+      id="leftHand"
+      hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+    ></a-entity>
+    <a-entity
+      id="rightHand"
+      hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+    ></a-entity>
+    <!-- </a-scene>
       <a-scene> -->
 
     <a-box
