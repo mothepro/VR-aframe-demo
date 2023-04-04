@@ -13,28 +13,29 @@
   ],
   "repository": "https://github.com/mothepro/vr-aframe-demo",
   "scripts": {
-    "build": "npm run build:npm && npm run build:esm",
     "pretest": "npm run build:npm",
     "test": "mocha -r should -r should-sinon dist/npm/test/*.js",
     "prerelease": "npm run build",
     "release": "np",
-    "importmap": "importly --host unpkg < package.json > demo/import-map.json",
-    "win:importmap": "type package.json | importly --host unpkg > demo/import-map.json",
-    "html:dev:real": "replace \"dev-only type=dev-only-\" \"dev-only type=\" demo/index.html",
-    "html:dev:shim": "replace \"dev-only type=\" \"dev-only type=dev-only-\" demo/index.html",
-    "html:prod:real": "replace \"prod-only type=prod-only-\" \"prod-only type=\" demo/index.html",
-    "html:prod:shim": "replace \"prod-only type=\" \"prod-only type=prod-only-\" demo/index.html",
-    "deploy": "npm run build:esm && npm run html:dev:shim && npm run html:prod:real",
-    "postdeploy": "npm run html:dev:real && npm run html:prod:shim",
     "postrelease": "npm run deploy",
+    "importmap": "importly --host unpkg < package.json > dist/import-map.json",
+    "win:importmap": "type package.json | importly --host unpkg > dist/import-map.json",
+    "html:dev:real": "replace \"dev-only type=dev-only-\" \"dev-only type=\" dist/index.html",
+    "html:dev:shim": "replace \"dev-only type=\" \"dev-only type=dev-only-\" dist/index.html",
+    "html:prod:real": "replace \"prod-only type=prod-only-\" \"prod-only type=\" dist/index.html",
+    "html:prod:shim": "replace \"prod-only type=\" \"prod-only type=prod-only-\" dist/index.html",
+    "deploy": "npm run build:esm && npm run html:dev:shim && npm run html:prod:real",
     "build:npm": "tsc",
-    "build:esm": "tsc -p tsconfig.esm.json"
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "prepreview": "npm run build",
+    "preview": "vite preview",
+    "postbuild": "npm run build:esm && npm run build:npm",
+    "build": "vite build"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.2",
     "@types/mocha": "^10.0.1",
     "@types/should-sinon": "^0.0.8",
-    "aframe": "^1.4.1",
     "gh-pages": "^5.0.0",
     "importly": "^0.2.0",
     "mocha": "^10.2.0",
@@ -43,9 +44,11 @@
     "should": "^13.2.3",
     "should-sinon": "^0.0.6",
     "sinon": "^15.0.3",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
   },
   "dependencies": {
+    "aframe": "^1.4.1",
     "lit-element": "^3.3.1"
   }
 }
