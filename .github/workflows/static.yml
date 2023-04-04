@@ -37,6 +37,8 @@ jobs:
         run: yarn
       - name: Compile
         run: yarn run build
+      - name: echo
+        run: cat dist/assets/*
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
