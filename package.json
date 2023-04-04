@@ -24,13 +24,13 @@
     "html:dev:shim": "replace \"dev-only type=\" \"dev-only type=dev-only-\" dist/index.html",
     "html:prod:real": "replace \"prod-only type=prod-only-\" \"prod-only type=\" dist/index.html",
     "html:prod:shim": "replace \"prod-only type=\" \"prod-only type=prod-only-\" dist/index.html",
-    "deploy": "npm run build:esm && npm run html:dev:shim && npm run html:prod:real",
+    "deploy": "npm run html:dev:shim && npm run html:prod:real",
     "build:npm": "tsc",
-    "build:esm": "tsc -p tsconfig.esm.json",
     "prepreview": "npm run build",
     "preview": "vite preview",
-    "postbuild": "npm run build:esm && npm run build:npm",
-    "build": "vite build"
+    "postbuild": "npm run build:npm",
+    "build": "vite build",
+    "start": "vite"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.2",
@@ -45,7 +45,9 @@
     "should-sinon": "^0.0.6",
     "sinon": "^15.0.3",
     "typescript": "^5.0.3",
-    "vite": "^4.2.1"
+    "vite": "^4.2.1",
+    "vite-plugin-cdn-import": "^0.3.5",
+    "vite-plugin-cdn-import-async": "^1.0.10"
   },
   "dependencies": {
     "aframe": "^1.4.1",

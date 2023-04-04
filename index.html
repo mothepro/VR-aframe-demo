@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vr Aframe Demo</title>
-  <script type="module" src="src/index.ts"></script>
+  <title>Mo's VR Aframe Demo</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script before type="module" src="src/index.ts"></script>
 </head>
 
 <body>
@@ -14,10 +15,21 @@
     <a-assets>
       <a-asset-items
         id="robo"
-        src="./src/asset/steampunk_underwater/scene.gltf"
+        src="/steampunk_underwater/scene.gltf"
       ></a-asset-items>
     </a-assets>
-    <a-entity gltf-model="#robo"></a-entity>
+    <a-entity
+      position="-1 0.5 -3" gltf-model="#robo"></a-entity>
+      <a-entity
+        id="leftHand"
+        hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+      ></a-entity>
+      <a-entity
+        id="rightHand"
+        hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+      ></a-entity>
+      <!-- </a-scene>
+      <a-scene> -->
 
     <a-box
       position="-1 0.5 -3"
