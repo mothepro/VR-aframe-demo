@@ -367,7 +367,7 @@
   resolved "https://registry.yarnpkg.com/@ungap/custom-elements/-/custom-elements-1.2.0.tgz#e211a25250af329b746eadc1a345b7df87e440ac"
   integrity sha512-zdSuu79stAwVUtzkQU9B5jhGh2LavtkeX4kxd2jtMJmZt7QqRJ1KJW5bukt/vUOaUs3z674GHd+nqYm0bu0Gyg==
 
-aframe@^1.4.1:
+aframe@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/aframe/-/aframe-1.4.1.tgz#683aae9da12c140bde7422e590e07c59fbb22064"
   integrity sha512-lMgjxEJkXCHf4aXI8O3Xoz4xcQwQjz2jZv61RUDhj+neMqBiTGuDW6mUV3S2aer7YXL/fykp1jadaM+nEPd8qA==

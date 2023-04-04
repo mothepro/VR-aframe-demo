@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
 
 export default defineConfig({
   appType: 'spa',
   base: '/VR-aframe-demo/',
   build: {
     rollupOptions: {
+      input: './src/index.ts',
       // make sure to externalize deps that shouldn't be bundled into your library
       external: ['aframe'],
       output: {
