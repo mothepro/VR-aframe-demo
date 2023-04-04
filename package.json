@@ -15,13 +15,12 @@
   "scripts": {
     "pretest": "tsc",
     "test": "mocha -r should -r should-sinon dist/npm/test/*.js",
-    "prerelease": "npm run build",
+    "prerelease": "tsc",
     "release": "np",
     "postrelease": "npm run deploy",
-    "importmap": "importly --host unpkg < package.json > dist/import-map.json",
+    "importmap": "importly --host unpkg < package.json > public/import-map.json",
     "prepreview": "npm run build",
     "preview": "vite preview",
-    "postbuild": "tsc",
     "build": "vite build",
     "start": "vite"
   },
@@ -43,7 +42,7 @@
     "vite-plugin-cdn-import-async": "^1.0.10"
   },
   "dependencies": {
-    "aframe": "^1.4.1",
+    "aframe": "^1.4.0",
     "lit-element": "^3.3.1"
   }
 }

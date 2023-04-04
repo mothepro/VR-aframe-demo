@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mo's VR Aframe Demo</title>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  <script before type="module" src="src/index.ts"></script>
+  <script type="importmap-shim" src="/import-map.json"></script>
+  <script type="module" src="src/index.ts"></script>
 </head>
 
 <body>
@@ -57,6 +57,214 @@
     <a-sky color="#ECECEC"></a-sky>
   </a-scene>
 
+  <!-- <a-scene
+      environment=""
+      info-message="htmlSrc: #messageText"
+      inspector=""
+      keyboard-shortcuts=""
+      screenshot=""
+      vr-mode-ui=""
+      device-orientation-permission-ui=""
+      webxr="[object Object]"
+      fog=""
+      visible=""
+    >
+      <a-assets>
+        <a-asset-item
+          id="messageText"
+          src="message.html"
+        ></a-asset-item>
+      </a-assets>
+      <a-entity
+        id="boxGeometry"
+        position="0 2.0 -1"
+        rotation="45 45 0"
+        geometry="primitive: box; height: 0.6; width: 0.6; depth: 0.6"
+        material="color: #ff4b5c"
+        size-change=""
+        scale="0.5 0.5 0.5"
+      ></a-entity>
+      <a-entity
+        id="torusGeometry"
+        position="0 2.0 -1"
+        rotation="45 45 0"
+        geometry="primitive: torus; radius: 0.4; radius-tubular: 0.06"
+        material="color: #d2e603"
+        size-change=""
+        visible="false"
+        scale="0.5 0.5 0.5"
+      ></a-entity>
+      <a-entity
+        id="sphereGeometry"
+        position="0 2.0 -1"
+        rotation="45 45 0"
+        geometry="primitive: sphere; radius: 0.6;"
+        material="color: #fcdab7"
+        size-change=""
+        visible="false"
+        scale="0.5 0.5 0.5"
+      ></a-entity>
+      <a-entity
+        id="menu"
+        menu=""
+        position="0 1.5 -0.5"
+        rotation="-45 0 0"
+        event-manager=""
+      >
+        <a-entity
+          slider=""
+          position="0 0.10 0"
+        ><a-entity
+            geometry=""
+            material=""
+          ></a-entity><a-entity
+            geometry=""
+            material=""
+            pinchable=""
+            rotation=""
+            color-change=""
+          ></a-entity></a-entity>
+        <a-entity
+          id="sphereButton"
+          button="label: sphere"
+          position="-0.15 0 0"
+          geometry=""
+          material=""
+          pressable=""
+        ><a-entity
+            position=""
+            text=""
+            scale=""
+          ></a-entity></a-entity>
+        <a-entity
+          id="boxButton"
+          button="label: box"
+          position="0 0 0"
+          geometry=""
+          material=""
+          pressable=""
+        ><a-entity
+            position=""
+            text=""
+            scale=""
+          ></a-entity></a-entity>
+        <a-entity
+          id="torusButton"
+          button="label: torus"
+          position="0.15 0 0"
+          geometry=""
+          material=""
+          pressable=""
+        ><a-entity
+            position=""
+            text=""
+            scale=""
+          ></a-entity></a-entity>
+        <a-entity
+          id="darkModeButton"
+          button="label: Dark Mode; width: 0.20; toggable: true"
+          position="0 -0.10 0"
+          geometry=""
+          material=""
+          pressable=""
+        ><a-entity
+            position=""
+            text=""
+            scale=""
+          ></a-entity></a-entity>
+        <a-entity
+          geometry=""
+          material=""
+          position=""
+        ></a-entity></a-entity>
+      <a-entity hand-tracking-controls="hand: left"></a-entity>
+      <a-entity hand-tracking-controls="hand: right"></a-entity>
+      <canvas
+        class="a-canvas a-grab-cursor"
+        data-aframe-canvas="true"
+        data-engine="three.js r147"
+        width="1650"
+        height="343"
+      ></canvas>
+      <div
+        class="a-loader-title"
+        style="display: none;"
+      >Hand Tracking! • A-Frame</div><a-entity
+        camera=""
+        position=""
+        wasd-controls=""
+        rotation=""
+        look-controls=""
+        aframe-injected=""
+        data-aframe-inspector-original-camera=""
+      ></a-entity><a-entity
+        class="environment"
+        position=""
+        light=""
+        visible=""
+      ></a-entity><a-entity
+        class="environment"
+        position=""
+        light=""
+        visible=""
+      ></a-entity><a-entity
+        rotation=""
+        class="environmentGround environment"
+        visible=""
+        scale=""
+        shadow=""
+      ></a-entity><a-entity
+        class="environmentDressing environment"
+        visible=""
+      ></a-entity><a-sky
+        radius="200"
+        theta-length="110"
+        class="environment"
+        material=""
+        visible=""
+        geometry=""
+        scale=""
+      ></a-sky><a-entity id="stars"></a-entity>
+      <div class="a-info-message-container"><button
+          class="a-info-message-button"
+          title="Information about this experience"
+        ></button></div>
+      <div
+        class="a-info-message"
+        aframe-injected=""
+        style="display: none;"
+      >
+        <p> Hand tracking relies on an <a href="https://www.w3.org/TR/webxr-hand-input-1/">API proposal</a> and is not yet
+          part of the WebXR standard. Browser support is experimental, it might vary across vendors and it might require
+          enabling the feature manually in settings.</p><button class="a-close-button-info">X</button>
+      </div>
+      <div
+        class="a-enter-vr fullscreen"
+        aframe-injected=""
+        style="display: block;"
+      ><button
+          class="a-enter-vr-button"
+          title="Enter VR mode with a headset or fullscreen without"
+          aframe-injected=""
+        ></button></div>
+      <div
+        class="a-enter-ar a-hidden"
+        aframe-injected=""
+      ><button
+          class="a-enter-ar-button"
+          title="Enter AR mode with a headset or handheld device."
+          aframe-injected=""
+        ></button></div>
+      <div
+        class="a-orientation-modal a-hidden"
+        aframe-injected=""
+      ><button aframe-injected="">Exit VR</button></div><a-entity
+        id="aframeInspectorMouseCursor"
+        raycaster=""
+        cursor=""
+        data-aframe-inspector="true"
+      ></a-entity>
+    </a-scene> -->
 </body>
 
 </html>

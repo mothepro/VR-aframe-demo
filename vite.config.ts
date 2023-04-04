@@ -6,15 +6,16 @@ export default defineConfig({
   base: '/VR-aframe-demo/',
   build: {
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
+      // make sure to externalize deps that shouldn't be bundled into your library
       external: ['aframe'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
+        // Provide global variables to use in the UMD build for externalized deps
         globals: {
           aframe: 'AFRAME',
         },
+        // paths: {
+        //   aframe: 'https://aframe.io/releases/1.4.0/aframe.min.js',
+        // },
       },
     },
   },
