@@ -36,7 +36,7 @@ jobs:
       - name: Install
         run: yarn
       - name: Compile
-        run: yarn run deploy
+        run: yarn run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
