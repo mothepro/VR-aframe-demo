@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.1",
     "@types/should-sinon": "^0.0.8",
+    "aframe": "^1.4.1",
     "gh-pages": "^5.0.0",
     "importly": "^0.2.0",
     "mocha": "^10.2.0",
