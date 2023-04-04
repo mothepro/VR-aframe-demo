@@ -3,6 +3,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   appType: 'spa',
+  base: '/VR-aframe-demo/',
   build: {
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
